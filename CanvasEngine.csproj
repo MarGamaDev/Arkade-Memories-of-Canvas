@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BA293133-9A49-44D5-AFBD-9D0029271143}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CanvasEngine</RootNamespace>
+    <AssemblyName>Arkade</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Lame, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Lame.1.1.5\lib\netstandard2.0\NAudio.Lame.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.D3DCompiler, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.D3DCompiler.4.2.0\lib\net45\SharpDX.D3DCompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Desktop, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Desktop.4.2.0\lib\net45\SharpDX.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Direct2D1.4.2.0\lib\net45\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Direct3D11.4.2.0\lib\net45\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.DXGI.4.2.0\lib\net45\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.Mathematics.4.2.0\lib\net45\SharpDX.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game\ArkadeCabinet.cs" />
+    <Compile Include="Game\Mario\Actors\MarioPipe.cs" />
+    <Compile Include="Game\Mario\MarioEnemySpawner.cs" />
+    <Compile Include="Game\MenuButton.cs" />
+    <Compile Include="Game\pacman\ghosts\Blinky.cs" />
+    <Compile Include="Game\pacman\ghosts\Clyde.cs" />
+    <Compile Include="Game\pacman\ghosts\Inky.cs" />
+    <Compile Include="Game\pacman\ghosts\Pinky.cs" />
+    <Compile Include="Engine\AbstractGame.cs" />
+    <Compile Include="Engine\GameEngine.cs" />
+    <Compile Include="Engine\Main.cs" />
+    <Compile Include="Game\Actor.cs" />
+    <Compile Include="Game\Arkade.cs" />
+    <Compile Include="Game\ArkadePlayer.cs" />
+    <Compile Include="Game\Mario\Actors\Enemies\MarioGoomba.cs" />
+    <Compile Include="Game\Mario\Actors\Enemies\MarioSpiny.cs" />
+    <Compile Include="Game\Mario\Actors\Enemies\MarioTurtle.cs" />
+    <Compile Include="Game\Mario\Actors\MarioBackgroundItem.cs" />
+    <Compile Include="Game\Mario\Actors\MarioEnemy.cs" />
+    <Compile Include="Game\Mario\Actors\MarioPlayer.cs" />
+    <Compile Include="Game\Mario\MarioGame.cs" />
+    <Compile Include="Game\MicroGame.cs" />
+    <Compile Include="Game\pacman\Pacman.cs" />
+    <Compile Include="Game\pacman\PacmanGhost.cs" />
+    <Compile Include="Game\pacman\PacmanPlayer.cs" />
+    <Compile Include="Game\Snake\Snake.cs" />
+    <Compile Include="Game\SpaceInvaders\SpaceInvaders.cs" />
+    <Compile Include="Game\SpaceInvaders\SpaceInvadersEnemy.cs" />
+    <Compile Include="Game\SpaceInvaders\SpaceInvadersPlayer.cs" />
+    <Compile Include="Game\SpaceInvaders\SpaceInvadersProjectile.cs" />
+    <Compile Include="Game\SpriteStruct.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Content Include="Assets\arcadekasten_textures\broken_arcadekast.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\arcadekasten_textures\mario_arcadekast.png" />
+    <Content Include="Assets\arcadekasten_textures\pacman_arcadekast.png" />
+    <Content Include="Assets\arcadekasten_textures\snake_arcadekast.png" />
+    <Content Include="Assets\arcadekasten_textures\spaceinvaders_arcadekast.png" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\credits-spritesheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Menus\cursor.png" />
+    <Content Include="Assets\decoration1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Menus\font_bitmap_10x16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Menus\GameTitle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Menus\lege_button.png" />
+    <Content Include="Assets\Menus\lege_button_selected.png" />
+    <Content Include="Assets\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Mario\brick.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Mario\bush.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Mario\cloud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Mario\Enemies.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Mario\mario.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Mario\MarioCabinet.png" />
+    <Content Include="Assets\Mario\mountain.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Mario\pipe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Menus\menu_backdrop.png" />
+    <Content Include="Assets\Pacman\blinky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Pacman\clyde.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Pacman\gameOverlayPacMan-final.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Pacman\inky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Pacman\pacman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Pacman\pinky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Menus\pause.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\player_sprites.png" />
+    <Content Include="Assets\snake_kabinet.png" />
+    <Content Include="Assets\SpaceInvaders\enemy1.1-SI.png" />
+    <Content Include="Assets\SpaceInvaders\enemy1.2-SI.png" />
+    <Content Include="Assets\SpaceInvaders\enemy1Animation-11x8.png" />
+    <Content Include="Assets\SpaceInvaders\enemy2.1-SI.png" />
+    <Content Include="Assets\SpaceInvaders\enemy2.2-SI.png" />
+    <Content Include="Assets\SpaceInvaders\enemy2Animation-8x8.png" />
+    <Content Include="Assets\SpaceInvaders\enemy3.1-SI.png" />
+    <Content Include="Assets\SpaceInvaders\enemy3.2-SI.png" />
+    <Content Include="Assets\SpaceInvaders\enemy3Animation-12x8.png" />
+    <Content Include="Assets\SpaceInvaders\enemyBoss-SI.png" />
+    <Content Include="Assets\SpaceInvaders\enemyBoss-SI2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\SpaceInvaders\enemyExplosion-SI.png" />
+    <Content Include="Assets\SpaceInvaders\gameOverlayBeta.png" />
+    <Content Include="Assets\SpaceInvaders\gameOverlaySpaceInvaders-final.png" />
+    <Content Include="Assets\SpaceInvaders\gameOverlaySpaceInvaders-sheet.png" />
+    <Content Include="Assets\SpaceInvaders\gameOverlaySpaceInvaders.png" />
+    <Content Include="Assets\SpaceInvaders\laser-SI.png" />
+    <Content Include="Assets\SpaceInvaders\player-SI.png" />
+    <Content Include="Assets\Menus\splash_screen.png" />
+    <Content Include="Assets\testArcadeTileset.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\NAudio.Lame.1.1.5\build\NAudio.Lame.targets" Condition="Exists('packages\NAudio.Lame.1.1.5\build\NAudio.Lame.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NAudio.Lame.1.1.5\build\NAudio.Lame.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NAudio.Lame.1.1.5\build\NAudio.Lame.targets'))" />
+  </Target>
+</Project>
